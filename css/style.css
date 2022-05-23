@@ -480,7 +480,6 @@ body {
   }
 }
 .packages__body {
-  padding-top: 1.25rem;
   border: 1px solid #5EBA00;
   border-radius: 6px;
   background-color: #fff;
@@ -516,24 +515,29 @@ body {
     padding-right: 1.25rem;
   }
 }
-@media (min-width: 75em) {
+@media (min-width: 61.99875em) {
   .packages__body {
-    padding-bottom: 1.875rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75em) {
-  .packages__body {
-    padding-bottom: calc(1.25rem + 0.625 * (((100vw - 20rem)) / ((55))));
-  }
-}
-@media (max-width: 20em) {
-  .packages__body {
-    padding-bottom: 1.25rem;
+    overflow: visible !important;
   }
 }
 @media (min-width: 61.99875em) {
   .packages__body {
-    overflow: visible !important;
+    padding-top: 1.25rem;
+  }
+}
+@media (min-width: 61.99875em) and (min-width: 75em) {
+  .packages__body {
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 61.99875em) and (min-width: 20em) and (max-width: 75em) {
+  .packages__body {
+    padding-bottom: calc(1.25rem + 0.625 * (((100vw - 20rem)) / ((55))));
+  }
+}
+@media (min-width: 61.99875em) and (max-width: 20em) {
+  .packages__body {
+    padding-bottom: 1.25rem;
   }
 }
 @media (min-width: 61.99875em) {
@@ -556,6 +560,26 @@ body {
 @media (min-width: 61.99875em) and (max-width: 20em) {
   .packages__swiper {
     column-gap: 0rem;
+  }
+}
+@media (max-width: 61.99875em) {
+  .packages__item {
+    padding-top: 1.25rem;
+  }
+}
+@media (max-width: 61.99875em) and (min-width: 75em) {
+  .packages__item {
+    padding-bottom: 1.875rem;
+  }
+}
+@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 75em) {
+  .packages__item {
+    padding-bottom: calc(1.25rem + 0.625 * (((100vw - 20rem)) / ((55))));
+  }
+}
+@media (max-width: 61.99875em) and (max-width: 20em) {
+  .packages__item {
+    padding-bottom: 1.25rem;
   }
 }
 .packages__pagination {
@@ -597,42 +621,45 @@ body {
   visibility: hidden;
   transition: all 0.3s ease 0s;
 }
-@media (any-hover: hover) {
-  .item-packages:hover {
-    z-index: 5;
+.item-packages._hover {
+  z-index: 5;
+}
+.item-packages._hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1.2);
+  width: 110%;
+}
+@media (max-width: 61.99875em) {
+  .item-packages._hover::after {
+    transform: translateX(-50%) scale(1);
   }
-  .item-packages:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) scale(1.2);
-    width: 110%;
-  }
-  .item-packages:hover .item-packages__more {
-    background-color: #fff;
-    color: #5EBA00;
-  }
-  .item-packages:hover .item-packages__lead {
-    background: #4F9D00;
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__price {
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__price span {
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__number {
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__caption {
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__label {
-    color: #fff;
-  }
-  .item-packages:hover .item-packages__tagline {
-    color: #fff;
-  }
+}
+.item-packages._hover .item-packages__more {
+  background-color: #fff;
+  color: #5EBA00;
+}
+.item-packages._hover .item-packages__lead {
+  background: #4F9D00;
+  color: #fff;
+}
+.item-packages._hover .item-packages__price {
+  color: #fff;
+}
+.item-packages._hover .item-packages__price span {
+  color: #fff;
+}
+.item-packages._hover .item-packages__number {
+  color: #fff;
+}
+.item-packages._hover .item-packages__caption {
+  color: #fff;
+}
+.item-packages._hover .item-packages__label {
+  color: #fff;
+}
+.item-packages._hover .item-packages__tagline {
+  color: #fff;
 }
 .item-packages__body {
   position: relative;
@@ -921,8 +948,14 @@ body {
   transition: all 0.3s ease 0s;
   font-size: 0.5rem;
 }
+@media (any-hover: hover) {
+  .characteristic__heading:hover::before {
+    color: #5EBA00;
+  }
+}
 .characteristic__heading._spoller-active::before {
   transform: translateY(-50%) rotate(0deg);
+  color: #5EBA00;
 }
 .heading-characteristic {
   margin-bottom: 0.625rem;
@@ -1223,11 +1256,9 @@ body {
     min-height: 1.875rem;
   }
 }
-@media (any-hover: hover) {
-  .prices-characteristic__link:hover {
-    background-color: #5EBA00;
-    color: #fff;
-  }
+.prices-characteristic__link._hover {
+  background-color: #5EBA00;
+  color: #fff;
 }
 .swiper {
   overflow: hidden;
