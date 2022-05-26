@@ -1390,6 +1390,7 @@ body {
   transform: translateY(-50%) rotate(180deg);
   transition: all 0.3s ease 0s;
   font-size: 0.5rem;
+  z-index: 2;
 }
 @media (any-hover: hover) {
   .characteristic__heading:hover::before {
